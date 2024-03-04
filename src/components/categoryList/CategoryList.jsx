@@ -9,7 +9,10 @@ const Categorylist = () => {
     <div className={styles.container}>
       <h1 className={styles.title}>Popular Categories</h1>
       <div className={styles.categories}>
-        <Link href="/blog?cat=general" className={`${styles.category} ${styles.style}`}>
+        <Link
+        href="/blog?cat=general"
+        className={`${styles.categoryItem} ${styles.general}`}
+      >
           <Image 
             src='/style.png' 
             alt="category"
@@ -19,7 +22,7 @@ const Categorylist = () => {
           />
           General
         </Link>
-        <Link href="/blog?cat=political" className={`${styles.category} ${styles.style}`}>
+        <Link href="/blog" className={`${styles.categoryItem} ${styles.political}`}>
           <Image 
             src='/political.png' 
             alt="category"
@@ -29,7 +32,7 @@ const Categorylist = () => {
           />
           Política
         </Link>
-        <Link href="/blog?cat=sports" className={`${styles.category} ${styles.style}`}>
+        <Link href="/blog" className={`${styles.categoryItem} ${styles.sports}`}>
           <Image 
             src='/sports.png' 
             alt="category"
@@ -39,7 +42,7 @@ const Categorylist = () => {
           />
           Deportes
         </Link>
-        <Link href="/blog?cat=musica" className={`${styles.category} ${styles.style}`}>
+        <Link href="/blog" className={`${styles.categoryItem} ${styles.musica}`}>
           <Image 
             src='/musica.jpg' 
             alt="category"
@@ -49,7 +52,7 @@ const Categorylist = () => {
           />
           Música
         </Link>
-        <Link href="/blog?cat=food" className={`${styles.category} ${styles.style}`}>
+        <Link href="/blog" className={`${styles.categoryItem} ${styles.food}`}>
           <Image 
             src='/food.jpg' 
             alt="category"
@@ -59,7 +62,7 @@ const Categorylist = () => {
           />
           Comida
         </Link>
-        <Link href="/blog?cat=dev" className={`${styles.category} ${styles.style}`}>
+        <Link href="/blog" className={`${styles.categoryItem} ${styles.dev}`}>
           <Image 
             src='/desarrollo.jpg' 
             alt="category"
