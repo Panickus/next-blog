@@ -9,7 +9,7 @@ const Categorylist = () => {
     <div className={styles.container}>
       <h1 className={styles.title}>Popular Categories</h1>
       <div className={styles.categories}>
-        <Link href="/blog?cat=gral" className={`${styles.category} ${styles.style}`}>
+        <Link href="/blog?cat=general" className={`${styles.category} ${styles.style}`}>
           <Image 
             src='/style.png' 
             alt="category"
