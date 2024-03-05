@@ -86,3 +86,11 @@ a{
    }
 
 }
+
+.ql-container {
+   font-size: 18px !important;
+}
+
+.quill > .ql-container > .ql-editor.ql-blank::before {
+   color: #b3b3b1;
+}

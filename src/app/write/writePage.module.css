@@ -1,1 +1,66 @@
-.container {}
+.container {
+
+}
+
+.editor {
+   display: flex;
+   gap: 20px;
+   height: 700px;
+   position: relative;
+}
+
+.button,.addButton {
+   width: 36px;
+   height: 36px;
+   border-radius: 50%;
+   background-color: transparent;
+   border: 1px solid var(--textColor);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+}
+
+.addButton {
+   color: #1a8917;
+}
+
+.add {
+   display: flex;
+   gap: 20px;
+   background-color: var(--bg);
+   position: absolute;
+   z-index: 999;
+   width: 100%;
+   left: 50px;
+}
+
+.input {
+   padding: 8px;
+   font-size: 30px;
+   border: 2px solid var(--textColor);
+   border-radius: 10px;
+   outline: 1px solid var(--textColor);
+   background-color: #d8d8d8;
+}
+
+.input:placeholder {
+   color: #b3b3b3;
+}
+
+.textArea {
+   width: 100px;
+}
+
+.publish {
+   position: absolute;
+   top: 30px;
+   right: 20px;
+   padding: 10px 20px;
+   border: none;
+   border-radius: 20px;
+   background-color: crimson;
+   font-weight: bold;
+   color: white;
+   cursor: pointer;
+}
