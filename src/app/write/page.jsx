@@ -1,4 +1,5 @@
 "use client";
+
 import "react-quill/dist/quill.snow.css";
 import Image from "next/image";
 import styles from "./writePage.module.css";
@@ -8,11 +9,6 @@ import { useSession } from "next-auth/react";
 import ReactQuill from "react-quill";
 import { ref, uploadBytesResumable, getDownloadURL, getStorage } from "firebase/storage";
 import { app } from "@/utils/firebase";
-
-
-
-
-
 
 const WritePage = () => {
   const { status } = useSession();
@@ -107,7 +103,7 @@ const WritePage = () => {
         <option value="political">Política</option>
         <option value="food">Comida</option>
         <option value="musica">Música</option>
-        <option value="deportes">Deportes</option>
+        <option value="sports">Deportes</option>
         <option value="coding">Dev</option>
       </select>
       <div className={styles.editor}>
