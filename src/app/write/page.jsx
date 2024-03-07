@@ -1,11 +1,18 @@
 "use client";
-import "react-quill/dist/quill.bubble.css";
+import "react-quill/dist/quill.snow.css";
 import Image from "next/image";
 import styles from "./writePage.module.css";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import ReactQuill from "react-quill";
+import { ref, uploadBytesResumable, getDownloadURL, getStorage } from "firebase/storage";
+import { app } from "@/utils/firebase";
+
+
+
+
+
 
 const WritePage = () => {
   const { status } = useSession();
@@ -96,16 +103,16 @@ const WritePage = () => {
         onChange={(e) => setTitle(e.target.value)}
       />
       <select className={styles.select} onChange={(e) => setCatSlug(e.target.value)}>
-        <option value="style">style</option>
-        <option value="fashion">fashion</option>
-        <option value="food">food</option>
-        <option value="culture">culture</option>
-        <option value="travel">travel</option>
-        <option value="coding">coding</option>
+        <option value="general">General</option>
+        <option value="political">Política</option>
+        <option value="food">Comida</option>
+        <option value="musica">Música</option>
+        <option value="deportes">Deportes</option>
+        <option value="coding">Dev</option>
       </select>
       <div className={styles.editor}>
         <button className={styles.button} onClick={() => setOpen(!open)}>
-          <Image src="/plus.png" alt="" width={16} height={16} />
+          <Image src="/plus.svg" alt="" width={16} height={16} />
         </button>
         {open && (
           <div className={styles.add}>
@@ -117,20 +124,20 @@ const WritePage = () => {
             />
             <button className={styles.addButton}>
               <label htmlFor="image">
-                <Image src="/image.png" alt="" width={16} height={16} />
+                <Image src="/image.svg" alt="" width={16} height={16} />
               </label>
             </button>
             <button className={styles.addButton}>
-              <Image src="/external.png" alt="" width={16} height={16} />
+              <Image src="/external.svg" alt="" width={16} height={16} />
             </button>
             <button className={styles.addButton}>
-              <Image src="/video.png" alt="" width={16} height={16} />
+              <Image src="/video.svg" alt="" width={16} height={16} />
             </button>
           </div>
         )}
         <ReactQuill
           className={styles.textArea}
-          theme="bubble"
+          theme="snow"
           value={value}
           onChange={setValue}
           placeholder="Tell your story..."
