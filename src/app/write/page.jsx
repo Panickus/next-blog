@@ -1,5 +1,5 @@
 "use client";
-
+import "react-quill/dist/quill.bubble.css";
 import Image from "next/image";
 import styles from "./writePage.module.css";
 import { useEffect, useState } from "react";
