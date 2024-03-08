@@ -1,14 +1,17 @@
 "use client";
 
-import "react-quill/dist/quill.snow.css";
 import Image from "next/image";
 import styles from "./writePage.module.css";
 import { useEffect, useState } from "react";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.bubble.css";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
-import ReactQuill from "react-quill";
 import { ref, uploadBytesResumable, getDownloadURL, getStorage } from "firebase/storage";
 import { app } from "@/utils/firebase";
+
+
+
 
 const WritePage = () => {
   const { status } = useSession();
@@ -73,14 +76,14 @@ const WritePage = () => {
       .replace(/^-+|-+$/g, "");
 
   const handleSubmit = async () => {
-    const res = await fetch("/api/posts", {
+    const res = await fetch('/api/posts', {
       method: "POST",
       body: JSON.stringify({
         title,
         desc: value,
         img: media,
         slug: slugify(title),
-        catSlug: catSlug || "style", //If not selected, choose the general category
+        catSlug: catSlug || "general", //If not selected, choose the general category
       }),
     });
 
@@ -133,7 +136,7 @@ const WritePage = () => {
         )}
         <ReactQuill
           className={styles.textArea}
-          theme="snow"
+          theme="bubble"
           value={value}
           onChange={setValue}
           placeholder="Tell your story..."
